@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form id="myForm" method="post">
+        <h1>Rentabilidad FFMM</h1>
+        <div class="form-container">
+            <div class="form-row">
+                <div>
+                    <label for="datepicker">Seleccionar Fecha:</label>
+                    <input type="text" id="datepicker" name="datepicker" value="{{ fecha_actual}}">
+                    <button class="boton" onclick="submitForm2()">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Contenedor para el gráfico de rentabilidades -->
+    <div id="graficoRentabilidades">
+        <canvas id="chartRentabilidades"></canvas>
+    </div>
+
+    <form id="detalleForm" method="post">
+        <div class="contenedor">
+            <h1>Detalle del fondo</h1>
+            {{ html|safe }}
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function submitForm(run) {
+            console.log('Valor de run:', run);
+
+            var form = document.getElementById('myForm');
+            form.action = '/detalle-fondo/' + run;
+            form.submit();
+        }
+
+        function submitForm2() {
+            var form = document.getElementById('myForm');
+            form.action = '/rentabilidades';
+            form.submit();
+        }
+
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                altFormat: 'yy-mm-dd',
+                defaultDate: new Date('{{ fecha_actual }}')
+            });
+
+            // Datos de rentabilidades (sustituye con tus datos reales)
+            var rentabilidadesData = {
+                labels: ['1 mes', '3 meses', '6 meses', '1 año', 'Último año'],
+                datasets: [
+                    {
+                        label: 'Run Fondo 8159',
+                        data: [-1.059, -5.079, -7.646, -6.962, -3.217],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Run Fondo 8178',
+                        data: [-3.122, -6.754, -9.848, -14.822, -5.741],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Run Fondo 8514',
+                        data: [-0.847, -5.909, -8.468, -11.104, -3.293],
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Run Fondo 9023',
+                        data: [-0.068, -7.384, -8.748, -10.691, -4.208],
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            // Configuración del gráfico de barras
+            var ctxRentabilidades = document.getElementById('chartRentabilidades').getContext('2d');
+            var chartRentabilidades = new Chart(ctxRentabilidades, {
+                type: 'bar',
+                data: rentabilidadesData,
+                options: {
+                    scales: {
+                        x: { stacked: true },
+                        y: { stacked: true }
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
