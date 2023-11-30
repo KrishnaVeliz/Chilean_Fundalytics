@@ -2,8 +2,6 @@ from flask import Flask, render_template, request
 import pandas as pd
 from datetime import datetime
 import calendar
-from datetime import datetime
-import plotly.express as px 
 
 app = Flask(__name__)
 

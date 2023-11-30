@@ -2,33 +2,33 @@
     ESTILO PARA UNA PÁGINA DE FINANZAS
 */
 
-@import "https://fonts.googleapis.com/css?family=Open Sans:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    font-family: 'Glashick', sans-serif;
+    background: #;
+    color: #000000;
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #555;
+    color: #000000; /color letras de descripciones/
 }
 
 a,
 a:hover,
 a:focus {
-    color: #007BFF;
+    color: #ffffff; /color letras recuadro izquierdo/
     text-decoration: none;
     transition: all 0.3s;
 }
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: rgb(255, 255, 255)000;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -56,10 +56,10 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #394867;
-    color: #fff;
+    min-width: auto; /* ajuste de logo*/
+    max-width: auto;
+    background: #013781;
+    color: #ffffff;
     transition: all 0.3s;
     height: 100vh;
 }
@@ -70,7 +70,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #29354E;
+    background: #ffffff; /contorno del logo/
 }
 
 #sidebar ul.components {
@@ -85,13 +85,13 @@ a:focus {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.5em;
     display: block;
 }
 
 #sidebar ul li a:hover {
     color: #007BFF;
-    background: #fff;
+    background: #ffffff; /ubicación puntero/
 }
 
 #sidebar ul li.active>a,
@@ -148,12 +148,12 @@ a.article:hover {
     min-height: 100vh;
     transition: all 0.3s;
     margin-left: 15px;
-    background: #fff;
+    background: #ffffff; /fondo detras de las tablas/
 }
 
 /* Encabezados */
 h1, h2 {
-    color: #29354E;
+    color: #013781;
 }
 
 /* MEDIAQUERIES */
@@ -185,7 +185,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #000000; /oorde de las tablas/
 }
 
 th, td {
@@ -194,12 +194,12 @@ th, td {
 }
 
 th {
-    background-color: #394867;
-    color: #fff;
+    background-color: #013781;
+    color: #ffffff; /color encabezados tablas/
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: #dddddd;
 }
 
 /* Estilos para Tablas Responsivas en Pantallas Pequeñas */
@@ -228,10 +228,10 @@ tr:hover {
 /* Estilo adicional para el datepicker */
 .ui-datepicker {
     font-size: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border: 1px solid #000000;
     opacity: 1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(156, 71, 71, 0.1);
 }
 
 .ui-datepicker-calendar {
@@ -264,7 +264,7 @@ tr:hover {
     width: 20%;
     background-color: #3498db;
     border: 1px solid #2980b9;
-    color: #fff;
+    color: #000000;
     font-size: 14px;
     margin-right: 5px;
 }
@@ -288,7 +288,7 @@ tr:hover {
 /* Estilo para la fecha activa */
 .ui-datepicker-calendar .ui-state-active {
     background-color: #ffffff;
-    color: #2980b9;
+    color: #b92929;
     font-weight: bold;
     font-size: 15px;
 }
@@ -296,8 +296,8 @@ tr:hover {
 /* Botones */
 /* Estilo para el botón Obtener Rentabilidades */
 .boton {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #013781;
+    color: #ffffff;
     height: 30px;
     padding: 10px 20px;
     font-size: 12px;
