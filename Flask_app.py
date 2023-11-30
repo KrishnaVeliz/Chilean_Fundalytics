@@ -42,6 +42,7 @@ def rentabilidades():
 def portafolios():
     tipo_cartera = request.form.get('tipos')
     df = pd.read_csv('uploads/portafolio_nacional.csv', sep=";", index_col=None)
+    df = pd.read_csv('uploads/portafolio_internacional.csv', sep=";", index_col=None)
     df['fecha'] = pd.to_datetime(df['fecha'], format='%Y-%m-%d')
 
     fondos = df['Run Fondo'].unique()
